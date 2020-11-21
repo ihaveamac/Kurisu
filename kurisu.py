@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# cache test
+
 # Kurisu by 916253 & ihaveamac
 # license: Apache License 2.0
 # https://github.com/nh-server/Kurisu
