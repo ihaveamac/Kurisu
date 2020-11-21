@@ -36,8 +36,7 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
-          push: false
-          # Can't auto-push with v2 right now...
+          push: true
           tags: ghcr.io/ihaveamac/kurisu:latest
           build-args: COMMIT=${{ github.sha }},BRANCH=${{ github.ref }}
       - name: Image digest
@@ -48,9 +47,9 @@ jobs:
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-          message: Pushing to ghcr.io/nh-server/kurisu
-      - name: Push Docker image
-        run: docker push ghcr.io/ihaveamac/kurisu:latest
+          message: Pushed to ghcr.io/ihaveamac/kurisu
+#      - name: Push Docker image
+#        run: docker push ghcr.io/ihaveamac/kurisu:latest
 # https://stackoverflow.com/questions/60477061/github-actions-how-to-deploy-to-remote-server-using-ssh/60479844#60479844
 #      - name: Create SSH key
 #        run: |
